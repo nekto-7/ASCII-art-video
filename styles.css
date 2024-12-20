@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  background: black;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+#output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px; /* Размер символов */
+  line-height: 15px; /* Межстрочное расстояние */
+  color: white; /* Цвет текста */
+  white-space: pre; /* Сохраняет форматирование ASCII */
+}
+
+video {
+  display: none;
+}
+
+canvas {
+  display: none;
+}
