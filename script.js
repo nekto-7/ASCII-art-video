@@ -10,8 +10,8 @@ const charsFixed = [
 const chars = [...charsFixed];
 const charsLength = chars.length;
 
-const canvasWidth = 192;  
-const canvasHeight = 64;
+const canvasWidth = 96;  
+const canvasHeight = 96;
 
 const videoTexture = new THREE.VideoTexture(video);
 videoTexture.flipY = true;  
@@ -85,7 +85,7 @@ function animate() {
       const b = pixels[i + 2];
       const brightness = (r + g + b) / (3 * 255);
       const char = brightnessToChar(brightness);
-      row += `<span style="color: rgb(${r+30}, ${g-30}, ${b-30});">${char}</span>`;
+      row += `<span style="color: rgb(${r}, ${g}, ${b});">${char}</span>`;
     }
     asciiOutput += `<div>${row}</div>`;
   }
@@ -98,6 +98,8 @@ function animate() {
 
 video.onloadeddata = () => {
   video.play();
-  video.playbackRate = 1 ; // Устанавливаем замедление в 2 раза
+  video.volume = 1;
+  video.playbackRate = 1 ; 
+  
   animate();
 };
